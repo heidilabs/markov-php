@@ -19,3 +19,6 @@ Just clone and run `composer install` to create the autoloader. Refer to the "de
         echo "YOUR PIECE OF WISDOM FROM NIETZSCHE<br><br>";
         echo $sentence;
         
+example output:
+
+>must be contrary to their pride, and also more mysterious, than one thinks: the capable man in the purity of his character
