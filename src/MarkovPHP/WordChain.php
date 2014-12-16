@@ -84,12 +84,16 @@ class WordChain
 
     /**
      * @param string $text
-     * @param int $chain
+     * @param int $chain number of words to chain
      * @return array
      */
     public function splitText($text, $chain)
     {
         $words = preg_split("/[\s]+/", $text);
+
+        if ($chain == 1) {
+            return $words;
+        }
 
         $chunks = array_chunk($words, $chain);
         $split = [];
