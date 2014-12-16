@@ -1,0 +1,16 @@
+{
+  "name": "heidilabs/markov-php",
+  "description": "A simple markov chain experiment",
+  "keywords": ["markov"],
+  "homepage": "https://github.com/heidilabs/markov-php",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Erika Heidi",
+      "email": "erika@erikaheidi.com"
+    }
+  ],
+  "autoload": {
+    "psr-0": { "": "src/" }
+  }
+}
