@@ -27,19 +27,41 @@ class WordChain
      * @param int $blocks
      * @return string
      */
-    public function generate($blocks = 10)
+    public function generate($blocks = 10, $theme = null)
     {
-        return $this->makeChain($this->getRandom(), $blocks);
+        $startingPoint = null;
+
+        if ($theme !== null) {
+            $startingPoint = $this->getThemedLink($theme);
+        }
+
+        if (!$startingPoint) {
+            $startingPoint = $this->getRandomLink();
+        }
+
+        return $this->makeChain($startingPoint, $blocks);
     }
 
     /**
+     * Gets a random chain link
      * @return string
      */
-    public function getRandom()
+    public function getRandomLink()
     {
         $startIndex = array_rand($this->words);
 
         return $this->words[$startIndex];
+    }
+
+    /**
+     * Gets a chain link based on a string search
+     * @param $string
+     */
+    public function getThemedLink($string)
+    {
+        $search = preg_grep("/($string+)+$/", $this->words);
+
+        return $search[array_rand($search)];
     }
 
     /**
@@ -56,7 +78,7 @@ class WordChain
             $complement = $this->findMatch($lastCouple);
 
             if (!$complement) {
-                $complement = $this->getRandom();
+                $complement = $this->getRandomLink();
             }
 
             $sentence .= ' ' . $complement;
