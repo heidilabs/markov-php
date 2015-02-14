@@ -3,10 +3,14 @@ markov-php
 
 experiments with markov chain in php
 
-
 ##Usage
 
 Just clone and run `composer install` to create the autoloader. Not necessary if you just want to use the CLI script.
+
+### Using the Library in your Project
+markov-php is available on Packagist for installation through Composer. [heidilabs/markov-php](https://packagist.org/packages/heidilabs/markov-php)
+
+        $ composer require heidilabs/markov-php ~0.2
 
 ##Demos
 
