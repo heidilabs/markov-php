@@ -40,6 +40,7 @@ example output:
 ###Word Chain - Theme
 
 CLI:
+        
         $ php chainer.php -r demos/resources/mobydick.txt -t love
      
 example output:
