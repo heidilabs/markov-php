@@ -10,5 +10,3 @@ $sentence = $chain->generate();
 
 echo "RESULT:<br>";
 echo $sentence;
-
-
