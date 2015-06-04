@@ -20,6 +20,9 @@ class MixedSourceChain extends WordChain
     public function __construct($source1, $source2, $totalWords = 20)
     {
         $this->sizeEach = round($totalWords/2);
+        $source1 = $this->prepareContent($source1);
+        $source2 = $this->prepareContent($source2);
+
         $this->source1Words = new WordChain($source1, $this->sizeEach);
         $this->source2 = $source2;
     }
@@ -45,6 +48,16 @@ class MixedSourceChain extends WordChain
         $pos = array_rand($search);
         $complement = array_slice($second, $pos + 1, $this->sizeEach);
 
-        return $first . ' ' . implode(' ', $complement);
+        $first[0] = strtoupper($first[0]);
+
+        return $first . ', ' . implode(' ', $complement) . ".";
+    }
+
+    public function prepareContent($content)
+    {
+        $content = strtolower($content);
+        $content = str_replace([',', '.', '-', ';', ':', '"'], "", $content);
+
+        return $content;
     }
 }
