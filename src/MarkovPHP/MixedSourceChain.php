@@ -49,15 +49,21 @@ class MixedSourceChain extends WordChain
         $complement = array_slice($second, $pos + 1, $this->sizeEach);
 
         $first[0] = strtoupper($first[0]);
+        $complement[count($complement)-1] = $this->removeAllPunctuation($complement[count($complement)-1]);
 
-        return $first . ', ' . implode(' ', $complement) . ".";
+        return $first . ' ' . implode(' ', $complement);
     }
 
     public function prepareContent($content)
     {
         $content = strtolower($content);
-        $content = str_replace([',', '.', '-', ';', ':', '"'], "", $content);
+        $content = str_replace(['.', '-', ';', ':', '"', '“'], "", $content);
 
         return $content;
+    }
+
+    public function removeAllPunctuation($content)
+    {
+        return str_replace([',', '.', '-', ';', ':', '"', "!", "?", "\""], "", $content);
     }
 }
