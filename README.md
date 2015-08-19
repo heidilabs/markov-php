@@ -1,7 +1,7 @@
 markov-php
 ==========
 
-experiments with markov chain in php
+Warning: this project is highly experimental.
 
 ##Usage
 
