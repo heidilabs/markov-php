@@ -3,7 +3,7 @@ markov-php
 
 Warning: this project is highly experimental.
 
-##Usage
+## Usage
 
 Just clone and run `composer install` to create the autoloader. Not necessary if you just want to use the CLI script.
 
@@ -12,9 +12,9 @@ markov-php is available on Packagist for installation through Composer. [heidila
 
         $ composer require heidilabs/markov-php "~0.2"
 
-##Demos
+## Demos
 
-###Word Chain
+### Word Chain
 
 CLI:
         
@@ -41,7 +41,7 @@ Script:
 example output:
 > must be contrary to their pride, and also more mysterious, than one thinks: the capable man in the purity of his character
 
-###Word Chain - Theme
+### Word Chain - Theme
 
 CLI:
         
@@ -65,7 +65,7 @@ example output:
 example output:
 > they hate thee, and me, and half-and-half, and impure!-- Ah, I cast hail-showers into the depths. Violently will my breast then heave;
 
-###Mixed Source
+### Mixed Source
 
 Combines two different sources and creates a simple chain with two connected parts:
 
