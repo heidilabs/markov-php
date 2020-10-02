@@ -59,7 +59,7 @@ class WordChain
      */
     public function getThemedLink($string)
     {
-        $search = preg_grep('/\b' . preg_quote($string, '/') . '\b/', $this->words);
+        $search = array_values(preg_grep('/\b' . preg_quote($string, '/') . '\b/', $this->words));
         return $search[array_rand($search)];
     }
 
